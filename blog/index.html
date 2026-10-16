@@ -206,6 +206,13 @@
       font-size: 3rem;
     }
 
+    .card-visual img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      display: block;
+    }    
+    
     .card-body {
       display: flex;
       flex: 1;
@@ -340,7 +347,13 @@
       <div class="grid" id="article-grid">
         <article class="card" data-category="Servis HP"
           data-search="samsung a10s layar mati troubleshooting servis hp">
-          <div class="card-visual" aria-hidden="true">📱</div>
+          <div class="card-visual">
+            <img
+              src="../assets/samsung-a10s-layar-mati.png"
+              alt="Ilustrasi Samsung A10s layar mati"
+              loading="lazy"
+            >
+          </div>
           <div class="card-body">
             <span class="tag">Servis HP</span>
             <h3>Mengatasi Samsung A10s Layar Mati</h3>
