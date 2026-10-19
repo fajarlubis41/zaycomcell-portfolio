@@ -1,0 +1,443 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Uji Coba Skor Digital Pencak Silat di Keris Pusaka | ZayComCell</title>
+
+  <meta name="description" content="Cerita pengembangan dan uji coba aplikasi Skor Digital Pencak Silat berbasis web di Perguruan Keris Pusaka, dari verifikasi nilai hingga sinkronisasi data pertandingan.">
+  <meta name="author" content="ZayComCell">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#09090b">
+
+  <link rel="canonical" href="https://zaycomcell.my.id/blog/uji-coba-skor-digital-pencak-silat/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="ZayComCell">
+  <meta property="og:title" content="Uji Coba Skor Digital Pencak Silat di Keris Pusaka">
+  <meta property="og:description" content="Dari proses coding hingga uji coba aplikasi skor digital pencak silat di gelanggang pertandingan.">
+  <meta property="og:url" content="https://zaycomcell.my.id/blog/uji-coba-skor-digital-pencak-silat/">
+  <meta property="og:image" content="https://zaycomcell.my.id/blog/uji-coba-skor-digital-pencak-silat/sampul-keris-pusaka.jpg">
+  <meta property="og:image:alt" content="Foto bersama peserta kegiatan pencak silat di Perguruan Keris Pusaka">
+
+  <!-- Twitter / social preview -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Uji Coba Skor Digital Pencak Silat di Keris Pusaka">
+  <meta name="twitter:description" content="Pengalaman menguji aplikasi skor digital pencak silat berbasis web.">
+  <meta name="twitter:image" content="https://zaycomcell.my.id/blog/uji-coba-skor-digital-pencak-silat/sampul-keris-pusaka.jpg">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: #09090b;
+      color: #e4e4e7;
+    }
+
+    .article-content h2 {
+      margin: 2.5rem 0 1rem;
+      color: #fafafa;
+      font-size: 1.55rem;
+      font-weight: 750;
+      line-height: 1.4;
+    }
+
+    .article-content p {
+      margin-bottom: 1.25rem;
+      color: #d4d4d8;
+      line-height: 1.9;
+    }
+
+    .article-content ul {
+      margin: 0 0 1.5rem;
+      padding-left: 1.5rem;
+      list-style: disc;
+    }
+
+    .article-content li {
+      margin-bottom: .75rem;
+      color: #d4d4d8;
+      line-height: 1.8;
+    }
+
+    .article-content strong { color: #fafafa; }
+
+    .article-content figure { margin: 2rem 0; }
+
+    .article-content figure img {
+      width: 100%;
+      height: auto;
+      border-radius: 1rem;
+    }
+
+    .article-content figcaption {
+      margin-top: .75rem;
+      color: #a1a1aa;
+      font-size: .875rem;
+      line-height: 1.7;
+    }
+
+    .article-content a {
+      color: #67e8f9;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .tiktok-wrapper {
+      width: 100%;
+      max-width: 400px;
+      margin: 1.5rem auto;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen antialiased">
+
+  <!-- Navigasi -->
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-zinc-950/90 backdrop-blur-xl">
+    <nav class="mx-auto flex max-w-5xl items-center justify-between px-5 py-4">
+      <a href="/" class="text-xl font-extrabold tracking-tight text-white">
+        Zay<span class="text-cyan-400">Com</span>Cell
+      </a>
+
+      <div class="flex items-center gap-5 text-sm">
+        <a href="/" class="text-zinc-300 hover:text-cyan-300">Beranda</a>
+        <a href="/blog/" class="font-semibold text-cyan-300">Blog</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="mx-auto max-w-5xl px-5 py-10 md:py-16">
+
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumb" class="mb-8 text-sm text-zinc-500">
+      <a href="/" class="hover:text-cyan-300">Beranda</a>
+      <span class="mx-2">/</span>
+      <a href="/blog/" class="hover:text-cyan-300">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-zinc-300">Teknologi</span>
+    </nav>
+
+    <article>
+
+      <!-- Judul artikel -->
+      <header class="mb-8">
+        <span class="inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300">
+          Teknologi
+        </span>
+
+        <h1 class="mt-5 text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl">
+          Uji Coba Skor Digital Pencak Silat di Perguruan Keris Pusaka: Dari Coding ke Gelanggang
+        </h1>
+
+        <p class="mt-5 max-w-3xl text-lg leading-relaxed text-zinc-400">
+          Membawa aplikasi dari layar komputer ke kegiatan pertandingan nyata
+          menjadi pengalaman berharga dalam perjalanan pengembangan Skor Digital Pencak Silat.
+        </p>
+
+        <div class="mt-6 flex flex-wrap items-center gap-3 text-sm text-zinc-500">
+          <span>Oleh ZayComCell</span>
+          <span>•</span>
+          <span>Kategori Teknologi</span>
+        </div>
+      </header>
+
+      <!-- Thumbnail / sampul utama -->
+      <figure>
+        <img
+          src="./sampul-keris-pusaka.jpg"
+          alt="Foto bersama peserta kegiatan pencak silat di Perguruan Keris Pusaka"
+          width="1600"
+          height="1067"
+          fetchpriority="high"
+          decoding="async"
+          style="aspect-ratio: 16 / 9; object-fit: cover;"
+        >
+        <figcaption>
+          Dokumentasi bersama peserta kegiatan pencak silat di Perguruan Keris Pusaka.
+        </figcaption>
+      </figure>
+
+      <!-- Isi artikel -->
+      <div class="article-content mx-auto max-w-3xl">
+
+        <h2>Pendahuluan</h2>
+
+        <p>
+          Membuat aplikasi sendiri memang menantang. Namun, membawa aplikasi
+          tersebut ke gelanggang pertandingan sungguhan adalah pengalaman
+          yang jauh lebih menegangkan sekaligus menyenangkan.
+        </p>
+
+        <p>
+          Beberapa waktu lalu, aplikasi <strong>Skor Digital Pencak Silat
+          Berbasis Web</strong> yang saya kembangkan mendapat kesempatan
+          untuk digunakan dalam kegiatan try out antarp perguruan di
+          Perguruan Keris Pusaka.
+        </p>
+
+        <p>
+          Bagi saya, ini menjadi pengalaman berharga karena aplikasi yang
+          sebelumnya dikembangkan dan diuji selama proses pemrograman
+          akhirnya digunakan langsung dalam kegiatan nyata.
+        </p>
+
+        <p>
+          Jujur saja, sempat ada kekhawatiran bagaimana jika sistem mengalami
+          kendala, koneksi melambat, atau data skor terlambat ditampilkan
+          ketika pertandingan berlangsung. Untungnya, selama uji coba,
+          sistem dapat digunakan dengan lancar.
+        </p>
+
+        <h2>Momen Juri Memverifikasi Poin</h2>
+
+        <p>
+          Salah satu tantangan dalam sistem skor digital adalah kemudahan
+          penggunaan bagi juri. Proses penilaian harus berlangsung cepat
+          dan jelas agar juri tetap fokus mengamati jalannya pertandingan.
+        </p>
+
+        <p>
+          Karena itu, antarmuka aplikasi dirancang sesederhana mungkin.
+          Juri dapat mengakses sistem melalui HP untuk melakukan verifikasi
+          nilai, tanpa harus bergantung sepenuhnya pada pencatatan manual.
+        </p>
+
+        <p>
+          Data yang dikirim melalui perangkat juri diproses oleh sistem pusat
+          agar informasi dapat ditampilkan secara digital sesuai mekanisme aplikasi.
+        </p>
+
+        <p>
+          Melihat aplikasi dapat digunakan dalam situasi pertandingan
+          menjadi salah satu momen yang paling melegakan. Sistem digital
+          juga membantu operator dan pihak yang berkepentingan memantau
+          informasi skor secara lebih praktis.
+        </p>
+
+        <p>
+          Pencatatan terpusat berpotensi mengurangi risiko kesalahan
+          rekapan manual. Meski demikian, mekanisme verifikasi dan
+          pengawasan tetap diperlukan agar data yang ditampilkan sesuai
+          dengan keputusan pertandingan.
+        </p>
+
+        <h2>Rekaman Lima Detik yang Berharga</h2>
+
+        <p>
+          Saat memasuki kategori Seni Tunggal, suasana pertandingan semakin
+          sibuk. Saya harus memantau aplikasi sekaligus memastikan sistem
+          berjalan sebagaimana mestinya. Akibatnya, saya hanya sempat
+          merekam video singkat berdurasi sekitar lima detik! 😄
+        </p>
+
+        <p>
+          Walaupun pendek, cuplikan tersebut menjadi dokumentasi berharga
+          dari pengujian aplikasi di lapangan.
+        </p>
+
+        <!-- Embed TikTok -->
+        <div class="my-8 rounded-2xl border border-white/10 bg-zinc-900/70 p-4 sm:p-6">
+          <h3 class="mb-3 text-lg font-bold text-white">
+            Cuplikan Uji Coba Kategori Seni Tunggal
+          </h3>
+
+          <p class="mb-5 text-sm text-zinc-400">
+            Video singkat dokumentasi aplikasi Skor Digital Pencak Silat.
+          </p>
+
+          <div class="tiktok-wrapper">
+            <blockquote
+              class="tiktok-embed"
+              cite="https://www.tiktok.com/@zaycomcell/video/7698422552435232007"
+              data-video-id="7689767013476060423"
+              style="max-width:400px; min-width:250px;"
+            >
+              <section>
+                <a
+                  href="https://www.tiktok.com/@zaycomcell/video/7698422552435232007"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Tonton video di TikTok
+                </a>
+              </section>
+            </blockquote>
+          </div>
+
+          <p class="text-center text-sm text-zinc-400">
+            Jika video tidak muncul, silakan
+            <a
+              href="https://www.tiktok.com/@zaycomcell/video/7698422552435232007"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-semibold text-cyan-300 hover:text-cyan-200"
+            >
+              tonton langsung di TikTok ↗
+            </a>.
+          </p>
+        </div>
+
+        <p>
+          Pada kategori seni, sinkronisasi informasi atlet dan pengendalian
+          waktu menjadi hal yang perlu diperhatikan. Informasi pada layar
+          harus sesuai dengan atlet yang bertanding, sedangkan timer harus
+          berjalan sesuai mekanisme yang digunakan.
+        </p>
+
+        <p>
+          Pengujian langsung membantu menemukan bagian yang perlu diperbaiki,
+          terutama dalam hal respons sistem, kejelasan informasi, dan
+          kemudahan operator saat menjalankan pertandingan.
+        </p>
+
+        <h2>Mengapa Memilih Aplikasi Berbasis Web?</h2>
+
+        <p>
+          Salah satu alasan saya mengembangkan sistem ini sebagai aplikasi
+          berbasis web adalah kemudahan akses. Panitia dan juri tidak harus
+          memasang aplikasi khusus di setiap perangkat.
+        </p>
+
+        <p>
+          Selama perangkat memiliki browser yang kompatibel dan koneksi
+          jaringan sesuai konfigurasi sistem, aplikasi dapat diakses
+          melalui alamat web.
+        </p>
+
+        <ul>
+          <li>
+            <strong>Praktis digunakan:</strong> aplikasi dapat dibuka melalui
+            browser di HP atau laptop.
+          </li>
+          <li>
+            <strong>Tidak perlu instalasi khusus:</strong> persiapan perangkat
+            menjadi lebih sederhana.
+          </li>
+          <li>
+            <strong>Informasi terpusat:</strong> data dapat dikelola melalui
+            sistem pusat sesuai hak akses pengguna.
+          </li>
+          <li>
+            <strong>Mudah diperbarui:</strong> perubahan aplikasi dapat
+            diterapkan pada sistem yang di-host tanpa memasang ulang aplikasi
+            di setiap perangkat.
+          </li>
+        </ul>
+
+        <p>
+          Meski praktis, kestabilan jaringan dan kesiapan server tetap perlu
+          diperhatikan. Pengujian sebelum pertandingan dan persiapan teknis
+          merupakan bagian penting dari penerapan sistem digital.
+        </p>
+
+        <h2>Evaluasi Setelah Uji Coba</h2>
+
+        <p>
+          Penggunaan aplikasi di Perguruan Keris Pusaka menjadi pengalaman
+          berarti dalam proses pengembangan. Saya dapat melihat langsung
+          bagaimana aplikasi digunakan dan bagaimana teknologi berhadapan
+          dengan kebutuhan nyata di lapangan.
+        </p>
+
+        <p>
+          Masih ada beberapa bagian yang ingin saya tingkatkan, terutama
+          penyempurnaan tampilan visual, kenyamanan penggunaan, dan
+          pengujian sistem untuk kondisi pertandingan yang lebih kompleks.
+        </p>
+
+        <p>
+          Bagi seorang pengembang, pengujian tidak berhenti ketika aplikasi
+          berhasil dijalankan di komputer sendiri. Aplikasi perlu dicoba
+          dalam situasi nyata agar kekurangan yang sebelumnya tidak terlihat
+          dapat ditemukan dan diperbaiki.
+        </p>
+
+        <p>
+          Pengalaman ini mengingatkan saya bahwa teknologi bukan hanya soal
+          menulis kode. Teknologi juga harus memberikan manfaat, mudah
+          digunakan, dan dapat diandalkan sesuai kebutuhan penggunanya.
+        </p>
+
+        <h2>Penutup</h2>
+
+        <p>
+          Uji coba Skor Digital Pencak Silat Berbasis Web di Perguruan
+          Keris Pusaka menjadi salah satu pencapaian penting dalam perjalanan
+          pengembangan aplikasi ini.
+        </p>
+
+        <p>
+          Dari proses coding hingga digunakan dalam kegiatan nyata, ada
+          banyak pelajaran yang saya dapatkan—mulai dari pentingnya
+          antarmuka sederhana, sinkronisasi data, hingga kesiapan sistem.
+        </p>
+
+        <p>
+          Ke depannya, saya berharap aplikasi ini dapat terus dikembangkan
+          dan diuji dalam kegiatan berskala lebih besar. Perjalanan masih
+          panjang, tetapi pengalaman ini menjadi motivasi untuk terus belajar,
+          memperbaiki, dan membangun solusi teknologi yang bermanfaat bagi olahraga.
+        </p>
+
+        <p class="rounded-2xl border border-cyan-400/20 bg-cyan-400/5 p-5">
+          <strong>
+            Bagi saya, aplikasi yang baik bukan hanya aplikasi yang berhasil
+            dibuat, tetapi juga aplikasi yang bisa membantu menyelesaikan
+            kebutuhan nyata.
+          </strong>
+        </p>
+
+      </div>
+    </article>
+
+    <!-- Penutup dan navigasi -->
+    <footer class="mx-auto mt-12 max-w-3xl border-t border-white/10 pt-8">
+      <div class="rounded-2xl border border-white/10 bg-zinc-900/60 p-6">
+        <p class="font-semibold text-white">
+          Tertarik melihat proyek teknologi ZayComCell lainnya?
+        </p>
+
+        <p class="mt-2 text-sm leading-relaxed text-zinc-400">
+          Kunjungi portofolio untuk melihat proyek aplikasi dan pengembangan lainnya.
+        </p>
+
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a
+            href="/"
+            class="inline-flex items-center rounded-xl bg-cyan-400 px-5 py-3 text-sm font-bold text-zinc-950 hover:bg-cyan-300"
+          >
+            Lihat Portofolio
+          </a>
+
+          <a
+            href="/blog/"
+            class="inline-flex items-center rounded-xl border border-white/15 px-5 py-3 text-sm font-semibold text-white hover:bg-white/5"
+          >
+            Kembali ke Blog
+          </a>
+        </div>
+      </div>
+
+      <p class="mt-8 text-center text-xs text-zinc-600">
+        © <span id="year"></span> ZayComCell.
+      </p>
+    </footer>
+
+  </main>
+
+  <script async src="https://www.tiktok.com/embed.js"></script>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
