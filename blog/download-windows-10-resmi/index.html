@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cara Download ISO Windows 10 Resmi Tanpa Media Creation Tool | Zaycomcell</title>
+<meta name="description" content="Panduan download ISO Windows 10 langsung dari Microsoft dengan Chrome DevTools dan User-Agent Firefox di macOS.">
+<link rel="canonical" href="https://zaycomcell.my.id/blog/download-windows-10-resmi/">
+<meta name="theme-color" content="#080d18">
+<style>
+    
+.article-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  margin: 24px 0;
+}
+
+.image-caption {
+  color: var(--muted);
+  font-size: 0.88rem;
+  text-align: center;
+  margin-top: -14px;
+  margin-bottom: 24px;
+}
+    
+:root{color-scheme:dark;--bg:#080d18;--panel:#111b2b;--text:#e8eef8;--muted:#aab8cc;--cyan:#39d8f4;--green:#4be0a3;--border:#29384d}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top right,#14283b,var(--bg) 40rem);color:var(--text);font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--cyan);text-underline-offset:3px}.nav{max-width:900px;margin:auto;padding:16px 20px;display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid var(--border)}.nav a{text-decoration:none}.brand{font-weight:800;color:var(--text)}.brand span{color:var(--cyan)}
+main{max-width:820px;margin:auto;padding:32px 20px 60px}.tag{color:var(--green);font-size:.8rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}h1{font-size:clamp(2rem,5vw,3.1rem);line-height:1.15;letter-spacing:-.04em;margin:12px 0}h2{font-size:1.65rem;line-height:1.3;margin-top:38px}h3{font-size:1.15rem}.intro{font-size:1.12rem;color:#c5d2e4}.meta,.caption{color:var(--muted);font-size:.88rem}.hero{margin:25px 0 32px;padding:36px 20px;text-align:center;border:1px solid var(--border);border-radius:16px;background:linear-gradient(135deg,#0c2b41,#172238);font-size:clamp(1.4rem,4vw,2rem);font-weight:800}.hero small{display:block;font-size:.9rem;font-weight:500;color:#b5cadd}.note,.warning,.step{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin:20px 0}.note{border-left:4px solid var(--green)}.warning{border-left:4px solid #f4bf4f}.step{border-left:4px solid var(--cyan)}.button{display:inline-block;padding:11px 16px;background:var(--cyan);color:#06131c;font-weight:800;text-decoration:none;border-radius:9px}.faq{border-bottom:1px solid var(--border);padding:12px 0}.faq h3{margin-bottom:4px}.faq p{margin-top:4px}code{background:#1c293b;border:1px solid var(--border);padding:2px 6px;border-radius:5px;color:#c0f5ff}li{margin:7px 0}footer{text-align:center;color:var(--muted);padding:24px;border-top:1px solid var(--border);font-size:.9rem}@media(max-width:560px){main{padding:24px 16px 44px}.nav{padding:14px 16px}}
+</style>
+</head>
+<body>
+<header><nav class="nav"><a class="brand" href="https://zaycomcell.my.id/">Zay<span>comcell</span></a><a href="https://zaycomcell.my.id/blog/">← Kembali ke Blog</a></nav></header>
+<main>
+<div class="tag">Tutorial Windows · Download Resmi</div>
+<h1>Cara Download ISO Windows 10 Resmi Tanpa Media Creation Tool</h1>
+<p class="intro">Lagi butuh file ISO Windows 10 buat install ulang laptop, tapi situs Microsoft malah menyodorkan Media Creation Tool? Tenang, Kamu bisa mencoba trik kecil lewat Chrome DevTools supaya pilihan ISO muncul langsung di browser.</p>
+<p class="meta">Zaycomcell · Panduan langkah demi langkah</p>
+<img
+  class="article-image"
+  src="Panduan Download ISO Windows 10 Resmi.webp"
+  alt="Panduan download ISO Windows 10 resmi dari Microsoft"
+  width="1200"
+  height="675"
+  fetchpriority="high"
+>
+<div class="hero">DOWNLOAD WINDOWS 10 ISO<small>Langsung dari situs resmi Microsoft</small></div>
+<article>
+<p>Kalau Kamu membuka halaman unduhan Windows 10 dari laptop Windows, pilihan yang muncul bisa berbeda dari yang terlihat di tutorial orang lain. Kadang yang ditawarkan adalah Media Creation Tool, padahal Kamu cuma ingin menyimpan file ISO untuk dipakai nanti.</p>
+<p>Nah, kita akan mencoba membuat Chrome mengirim identitas browser seperti Firefox di Mac. Laptop Kamu tetap memakai Windows, kok—yang berubah hanya informasi browser yang dikirim ke situs Microsoft.</p>
+<div class="warning"><strong>Sebelum mulai:</strong> tampilan situs Microsoft bisa berubah, jadi trik ini belum tentu berhasil di setiap kondisi. Pastikan Kamu tetap mengunduh file dari Microsoft, bukan dari situs yang tidak jelas.</div>
+
+<h2>1. Buka halaman ISO resmi Microsoft</h2>
+<p>Buka halaman berikut di Chrome:</p>
+<p><a class="button" href="https://www.microsoft.com/software-download/windows10ISO" target="_blank" rel="noopener noreferrer">Buka halaman ISO Windows 10</a></p>
+<p>Jika bagian <strong>Select edition</strong> sudah muncul, Kamu bisa langsung ke langkah pemilihan edisi. Jika belum, lanjutkan.</p>
+<img
+  src="Halaman ISO Resmi Microsoft.webp"
+  alt="Halaman ISO Resmi Microsoft"
+  width="1000"
+  height="563"
+  loading="lazy"
+  decoding="async"
+  class="article-image"
+>
+
+<h2>2. Buka panel Developer Tools di Chrome</h2>
+<p>Tekan <code>F12</code> pada keyboard. Panel Developer Tools akan terbuka di sisi atau bagian bawah browser.</p>
+<p>Tidak muncul? Klik menu Chrome berupa tiga titik, lalu masuk ke <strong>More tools → Developer tools</strong>. Setelah panel terbuka, pilih tab <strong>Network</strong>.</p>
+
+<h2>3. Cari pengaturan Network conditions</h2>
+<p>Di panel Developer Tools, klik menu tiga titik. Arahkan ke <strong>More tools</strong>, lalu pilih <strong>Network conditions</strong>.</p>
+<p>Panel pengaturannya biasanya muncul di bagian bawah DevTools. Gulir sedikit jika perlu, lalu cari bagian <strong>User agent</strong>.</p>
+
+<h2>4. Bikin Chrome seolah-olah memakai Firefox di Mac</h2>
+<p>Di bagian <strong>User agent</strong>, hilangkan centang <strong>Use browser default</strong>. Setelah itu, buka daftar pilihan dan pilih <strong>Firefox — Mac</strong>, sama seperti yang terlihat di screenshot.</p>
+<p>Nah, ini inti triknya, bang—eh, maksudnya Kamu! Chrome akan mengirim identitas Firefox di macOS saat meminta halaman ke Microsoft. Windows di laptopmu tidak berubah sama sekali.</p>
+<img
+  src="Pengaturan User-Agent Firefox Mac di Chrome.webp"
+  alt="Pengaturan User-Agent Firefox Mac di Chrome"
+  width="1000"
+  height="563"
+  loading="lazy"
+  decoding="async"
+  class="article-image"
+>
+<div class="note"><strong>Tips kecil:</strong> biarkan panel DevTools tetap terbuka saat halaman dimuat ulang. Dengan begitu, Kamu bisa memastikan pengaturan User-Agent masih terpilih.</div>
+
+<h2>5. Refresh halaman dan lihat hasilnya</h2>
+<p>Kembali ke halaman ISO Microsoft, lalu tekan <code>Ctrl + R</code>. Kalau triknya cocok dengan halaman Microsoft yang sedang aktif, Kamu akan melihat bagian <strong>Select edition</strong> dengan pilihan seperti <strong>Windows 10 (multi-edition ISO)</strong>.</p>
+
+<h2>6. Pilih edisi Windows yang tersedia</h2>
+<p>Pilih <strong>Windows 10 (multi-edition ISO)</strong> jika opsi itu muncul, lalu klik <strong>Confirm</strong>. Tunggu sebentar sampai Microsoft menampilkan langkah berikutnya.</p>
+<p>Kalau pilihan ISO tetap tidak muncul, jangan asal mengambil file dari situs lain. Kamu bisa mencoba lagi atau memakai metode resmi Microsoft yang tersedia.</p>
+
+<h2>7. Pilih bahasa, lalu tentukan 32-bit atau 64-bit</h2>
+<p>Kalau diminta, pilih bahasa Windows yang Kamu inginkan. Berikutnya, Microsoft akan menampilkan tautan unduhan yang tersedia untuk perangkat 64-bit atau 32-bit, bergantung pada opsi yang ditawarkan.</p>
+<p>Untuk memeriksa tipe sistem, buka <strong>Settings → System → About</strong>, lalu lihat bagian <strong>System type</strong>.</p>
+
+<h2>8. Simpan file ISO sampai unduhannya selesai</h2>
+<p>Klik tautan yang sesuai, lalu simpan file ISO di drive yang ruang kosongnya cukup. Ukurannya beberapa gigabyte, jadi gunakan koneksi internet yang stabil dan jangan matikan komputer sebelum unduhan selesai.</p>
+<p>ISO dapat digunakan untuk membuat USB installer. Cadangkan isi flashdisk terlebih dahulu karena proses pembuatan media bisa menghapus semua file di dalamnya.</p>
+
+<h2>Kalau pilihan ISO belum juga muncul</h2>
+<ul><li>Pastikan alamat yang dibuka benar-benar domain resmi Microsoft.</li><li>Pastikan User-Agent tidak kembali ke <em>Use browser default</em>.</li><li>Coba muat ulang halaman setelah mengatur User-Agent kembali.</li><li>Jika cara ini tidak lagi berfungsi, gunakan Media Creation Tool resmi dari Microsoft.</li></ul>
+
+<div class="warning"><strong>Info keamanan:</strong> dukungan umum Windows 10 Home dan Pro berakhir pada 14 Oktober 2025. Perangkat yang tidak menerima pembaruan keamanan reguler berisiko lebih besar. Pertimbangkan Windows 11 jika perangkat mendukungnya atau periksa opsi Extended Security Updates (ESU) yang memenuhi syarat.<p><a href="https://www.microsoft.com/software-download/windows10" target="_blank" rel="noopener noreferrer">Halaman resmi Windows 10</a> · <a href="https://support.microsoft.com/en-us/windows" target="_blank" rel="noopener noreferrer">Dukungan Microsoft</a></p></div>
+
+<h2>Pertanyaan yang sering ditanyakan</h2>
+<section class="faq"><h3>Apakah cara ini mengubah Windows menjadi macOS?</h3><p>Tidak. Hanya User-Agent browser yang diubah; sistem operasi komputer tetap Windows.</p></section>
+<section class="faq"><h3>Apakah ISO Windows 10 gratis?</h3><p>File instalasinya dapat diunduh dari situs Microsoft, tetapi aktivasi tetap mengikuti ketentuan lisensi yang berlaku.</p></section>
+<section class="faq"><h3>Apakah trik ini selalu berhasil?</h3><p>Tidak selalu. Microsoft dapat mengubah halaman unduhannya. Jika opsi ISO tidak muncul, gunakan metode resmi lain yang tersedia.</p></section>
+<section class="faq"><h3>Apakah saya bisa langsung install setelah mengunduh ISO?</h3><p>Biasanya ISO perlu digunakan untuk membuat media instalasi atau dipakai dengan metode yang sesuai. Cadangkan data sebelum instalasi ulang.</p></section>
+<p>Itu dia trik yang bisa Kamu coba untuk mengakses pilihan ISO Windows 10 langsung dari browser. Pastikan file berasal dari Microsoft, pilih arsitektur yang cocok dengan perangkat, dan pikirkan juga soal keamanan karena dukungan umum Windows 10 sudah berakhir.</p>
+</article>
+</main>
+<footer>© 2026 Zaycomcell · Tips teknologi, servis gadget, dan tutorial komputer.</footer>
+</body>
+</html>
