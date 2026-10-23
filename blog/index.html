@@ -13,7 +13,31 @@
 .card[hidden] {
   display: none !important;
 }
-.thumb{display:block;position:relative;aspect-ratio:16/9;overflow:hidden;background:radial-gradient(circle at 70% 20%,rgba(34,211,238,.18),transparent 42%),linear-gradient(135deg,#102b3a,#101820);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;text-align:center;padding:16px;color:var(--cyan)}.thumb .symbol{font-size:2.4rem;line-height:1}.thumb strong{font-size:1rem;letter-spacing:.04em}.thumb small{color:#b6c8d5;font-size:.78rem}.card-body{padding:17px;display:flex;flex-direction:column;flex:1}.category{color:var(--green);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em}.card h3{font-size:1.1rem;line-height:1.35;margin:8px 0}.card p{font-size:.9rem;color:var(--muted);margin:0 0 18px}.read{display:inline-flex;gap:7px;margin-top:auto;color:var(--cyan);font-size:.9rem;font-weight:750}.read:hover{text-decoration:underline;text-underline-offset:4px}.empty{display:none;padding:30px 18px;border:1px dashed var(--line);border-radius:14px;text-align:center;color:var(--muted)}.back{display:inline-block;margin:36px 0 42px;color:var(--cyan);font-size:.92rem}footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-size:.86rem}.footer-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}@media(max-width:850px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.container{width:calc(100% - 28px)}.nav{min-height:60px}.navlinks{gap:13px;font-size:.82rem}.hero{padding-top:34px}.tools{grid-template-columns:1fr;gap:8px}.count{white-space:normal}.grid{grid-template-columns:1fr;gap:15px}.card{display:grid;grid-template-columns:112px minmax(0,1fr)}.thumb{aspect-ratio:1/1;padding:8px;gap:5px}.thumb .symbol{font-size:1.65rem}.thumb strong{font-size:.73rem}.thumb small{font-size:.65rem}.card-body{padding:12px}.card h3{font-size:.98rem;margin:6px 0}.card p{font-size:.82rem;line-height:1.5;margin-bottom:10px}.category{font-size:.65rem}.read{font-size:.82rem}.back{margin:28px 0 34px}}
+.thumb{display:block;position:relative;aspect-ratio:16/9;overflow:hidden;background:radial-gradient(circle at 70% 20%,rgba(34,211,238,.18),transparent 42%),linear-gradient(135deg,#102b3a,#101820);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;text-align:center;padding:16px;color:var(--cyan)}.thumb .symbol{font-size:2.4rem;line-height:1}.thumb strong{font-size:1rem;letter-spacing:.04em}.thumb small{color:#b6c8d5;font-size:.78rem}.card-body{padding:17px;display:flex;flex-direction:column;flex:1}.category{color:var(--green);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em}.card h3{font-size:1.1rem;line-height:1.35;margin:8px 0}.card p{font-size:.9rem;color:var(--muted);margin:0 0 18px}.read{display:inline-flex;gap:7px;margin-top:auto;color:var(--cyan);font-size:.9rem;font-weight:750}.read:hover{text-decoration:underline;text-underline-offset:4px}.empty{display:none;padding:30px 18px;border:1px dashed var(--line);border-radius:14px;text-align:center;color:var(--muted)}.back{display:inline-block;margin:36px 0 42px;color:var(--cyan);font-size:.92rem}footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-size:.86rem}.footer-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}@media(max-width:850px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.container{width:calc(100% - 28px)}.nav{min-height:60px}.navlinks{gap:13px;font-size:.82rem}.hero{padding-top:34px}.tools{grid-template-columns:1fr;gap:8px}.count{white-space:normal}.grid{grid-template-columns:1fr;gap:15px}.card{display:grid;grid-template-columns:112px minmax(0,1fr)}.thumb{aspect-ratio:1/1;padding:8px;gap:5px}.thumb .symbol{font-size:1.65rem}.thumb strong{font-size:.73rem}.thumb small{font-size:.65rem}.card-body{padding:12px}
+.thumb {
+  display: block;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  padding: 0;
+  background: #101820;
+  border-bottom: 1px solid var(--line);
+}
+
+.thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.thumb .symbol,
+.thumb strong,
+.thumb small {
+  display: none;
+}
+.card h3{font-size:.98rem;margin:6px 0}.card p{font-size:.82rem;line-height:1.5;margin-bottom:10px}.category{font-size:.65rem}.read{font-size:.82rem}.back{margin:28px 0 34px}}
 </style>
 </head>
 <body>
