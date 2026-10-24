@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tutorial Python: Membuat Aplikasi Kasir Sederhana | Zaycomcell</title>
+  <meta name="description" content="Belajar Python dari nol dengan membuat aplikasi kasir sederhana di terminal. Pelajari input barang, list, dictionary, perulangan, dan perhitungan total belanja.">
+  <meta name="keywords" content="tutorial Python pemula, belajar Python, aplikasi kasir Python, program kasir sederhana, Python terminal">
+  <meta name="author" content="Zaycomcell">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#090e13">
+
+  <link rel="canonical" href="https://zaycomcell.my.id/blog/tutorial-kasir-python/">
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="Zaycomcell">
+  <meta property="og:title" content="Tutorial Python: Membuat Aplikasi Kasir Sederhana">
+  <meta property="og:description" content="Tutorial Python untuk pemula dengan contoh aplikasi kasir sederhana yang bisa langsung dicoba di terminal.">
+  <meta property="og:url" content="https://zaycomcell.my.id/blog/tutorial-kasir-python/">
+  <meta property="og:image" content="https://zaycomcell.my.id/assets/tutorial-kasir-python.webp">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tutorial Python: Membuat Aplikasi Kasir Sederhana">
+  <meta name="twitter:description" content="Belajar Python sambil membuat aplikasi kasir sederhana di terminal.">
+  <meta name="twitter:image" content="https://zaycomcell.my.id/assets/tutorial-kasir-python.webp">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: "#090e13",
+            panel: "#101820",
+            cyan: "#22d3ee",
+            emerald: "#34d399"
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    body {
+      background: #090e13;
+      color: #e5edf5;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.8;
+    }
+
+    .article-content h2 {
+      color: #f8fafc;
+      font-size: 1.55rem;
+      font-weight: 700;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+
+    .article-content h3 {
+      color: #67e8f9;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-top: 1.75rem;
+      margin-bottom: .75rem;
+    }
+
+    .article-content p {
+      margin-bottom: 1.1rem;
+      color: #cbd5e1;
+    }
+
+    .article-content a {
+      color: #22d3ee;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin: 0 0 1.25rem 1.5rem;
+      color: #cbd5e1;
+    }
+
+    .article-content ul {
+      list-style: disc;
+    }
+
+    .article-content ol {
+      list-style: decimal;
+    }
+
+    .article-content li {
+      margin-bottom: .45rem;
+    }
+
+    .article-content pre {
+      background: #05090d;
+      border: 1px solid #263442;
+      border-radius: .75rem;
+      padding: 1rem;
+      margin: 1rem 0 1.5rem;
+      overflow-x: auto;
+      line-height: 1.65;
+      font-size: .9rem;
+    }
+
+    .article-content code {
+      font-family: Consolas, Monaco, monospace;
+    }
+
+    .article-content :not(pre) > code {
+      color: #67e8f9;
+      background: #17232d;
+      padding: .15rem .35rem;
+      border-radius: .3rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="border-b border-slate-800">
+    <nav class="mx-auto flex max-w-5xl items-center justify-between px-5 py-5">
+      <a href="/" class="text-xl font-bold text-cyan-400">
+        Zaycomcell
+      </a>
+
+      <div class="flex gap-5 text-sm">
+        <a href="/" class="text-slate-300 hover:text-cyan-400">Beranda</a>
+        <a href="/blog/" class="text-slate-300 hover:text-cyan-400">Blog</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="mx-auto max-w-3xl px-5 py-8 md:py-12">
+    <nav aria-label="Breadcrumb" class="mb-6 text-sm text-slate-400">
+      <a href="/" class="hover:text-cyan-400">Beranda</a>
+      <span aria-hidden="true"> / </span>
+      <a href="/blog/" class="hover:text-cyan-400">Blog</a>
+      <span aria-hidden="true"> / </span>
+      <span class="text-cyan-300">Python</span>
+    </nav>
+
+    <article>
+      <header class="mb-8">
+        <span class="inline-block rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-xs font-bold tracking-wider text-emerald-300">
+          PYTHON
+        </span>
+
+        <h1 class="mt-4 text-3xl font-bold leading-tight text-white md:text-4xl">
+          Tutorial Python Pemula: Membuat Aplikasi Kasir Sederhana di Terminal
+        </h1>
+
+        <p class="mt-4 text-slate-400">
+          Belajar dasar Python lewat proyek kecil yang bisa langsung dipraktikkan, mulai dari memasukkan barang hingga menghitung total belanja.
+        </p>
+
+        <p class="mt-3 text-sm text-slate-500">
+          Oleh Zaycomcell · Tutorial Pemrograman
+        </p>
+      </header>
+
+      <!--
+        Thumbnail:
+        Simpan gambar sebagai assets/tutorial-kasir-python.webp.
+        Gunakan gambar buatan sendiri berukuran 1200 x 675 piksel.
+      -->
+      <figure class="mb-8">
+        <img
+          src="/assets/tutorial-kasir-python.webp"
+          alt="Ilustrasi belajar pemrograman Python untuk membuat aplikasi kasir sederhana"
+          width="1200"
+          height="675"
+          fetchpriority="high"
+          class="aspect-video w-full rounded-xl border border-slate-800 object-cover"
+        >
+        <figcaption class="mt-2 text-center text-xs text-slate-500">
+          Membuat aplikasi sederhana adalah salah satu cara belajar Python sambil praktik.
+        </figcaption>
+      </figure>
+
+      <div class="article-content">
+        <p>
+          Belajar Python tidak harus dimulai dari proyek yang rumit. Justru, proyek kecil sering lebih membantu karena kita bisa melihat langsung bagaimana kode bekerja.
+        </p>
+
+        <p>
+          Salah satu latihan yang menarik adalah membuat aplikasi kasir sederhana. Dari proyek ini, kita bisa belajar menerima input, menghitung harga barang, menyimpan data sementara, dan menampilkan hasil transaksi.
+        </p>
+
+        <p>
+          Di tutorial ini, kita akan membuat aplikasi kasir yang berjalan di terminal. Kalau abang masih baru belajar, tidak perlu khawatir. Kita akan membahas bagian pentingnya satu per satu.
+        </p>
+
+        <h2>1. Apa yang Akan Kita Buat?</h2>
+
+        <p>
+          Program kasir ini akan meminta nama barang, harga, dan jumlah pembelian. Setelah semua barang dimasukkan, program menghitung total belanja dan menampilkan struk sederhana.
+        </p>
+
+        <ul>
+          <li>Memasukkan beberapa barang dalam satu transaksi.</li>
+          <li>Menghitung subtotal setiap barang.</li>
+          <li>Menghitung total belanja secara otomatis.</li>
+          <li>Menampilkan ringkasan belanja di terminal.</li>
+          <li>Menangani input harga atau jumlah yang bukan angka.</li>
+        </ul>
+
+        <p>
+          Kita belum menggunakan database atau tampilan grafis. Tujuannya adalah memahami dasar Python terlebih dahulu sebelum aplikasi dikembangkan lebih jauh.
+        </p>
+
+        <h2>2. Siapkan Python dan File Program</h2>
+
+        <p>
+          Pastikan Python sudah terpasang di komputer. Buka Command Prompt di Windows, lalu jalankan perintah berikut:
+        </p>
+
+        <pre><code>python --version</code></pre>
+
+        <p>
+          Jika versi Python muncul, buat file baru bernama <code>kasir.py</code>. Kamu bisa menggunakan editor kode yang sudah biasa dipakai.
+        </p>
+
+        <h2>3. Tulis Kode Aplikasi Kasir</h2>
+
+        <p>
+          Salin kode berikut ke dalam file <code>kasir.py</code>. Perhatikan nama variabel dan indentasinya, karena Python menggunakan indentasi untuk menentukan blok kode.
+        </p>
+
+        <pre><code>print("=== APLIKASI KASIR ZAYCOMCELL ===")
+
+keranjang = []
+
+while True:
+    nama = input(
+        "Nama barang (ketik 'selesai' untuk mengakhiri): "
+    ).strip()
+
+    if nama.lower() == "selesai":
+        break
+
+    if not nama:
+        print("Nama barang tidak boleh kosong.")
+        continue
+
+    try:
+        harga = int(input("Harga barang: Rp "))
+        jumlah = int(input("Jumlah barang: "))
+
+        if harga &lt; 0 or jumlah &lt;= 0:
+            print("Harga tidak boleh negatif dan jumlah harus lebih dari 0.")
+            continue
+
+        subtotal = harga * jumlah
+
+        barang = {
+            "nama": nama,
+            "harga": harga,
+            "jumlah": jumlah,
+            "subtotal": subtotal
+        }
+
+        keranjang.append(barang)
+
+        print(f"Subtotal: Rp {subtotal:,}")
+        print()
+
+    except ValueError:
+        print("Harga dan jumlah harus diisi dengan angka.")
+        print()
+
+print("\n========== STRUK BELANJA ==========")
+
+total = 0
+
+for nomor, barang in enumerate(keranjang, start=1):
+    print(f"{nomor}. {barang['nama']}")
+    print(f"   {barang['jumlah']} x Rp {barang['harga']:,}")
+    print(f"   Subtotal: Rp {barang['subtotal']:,}")
+
+    total += barang["subtotal"]
+
+print("-----------------------------------")
+print(f"TOTAL BELANJA: Rp {total:,}")
+print("Terima kasih sudah berbelanja!")</code></pre>
+
+        <h2>4. Jalankan Program</h2>
+
+        <p>
+          Simpan file, buka terminal di folder tempat file tersebut berada, kemudian jalankan:
+        </p>
+
+        <pre><code>python kasir.py</code></pre>
+
+        <p>Contohnya, kita memasukkan dua barang berikut:</p>
+
+        <pre><code>=== APLIKASI KASIR ZAYCOMCELL ===
+Nama barang (ketik 'selesai' untuk mengakhiri): Kabel USB
+Harga barang: Rp 15000
+Jumlah barang: 2
+Subtotal: Rp 30,000
+
+Nama barang (ketik 'selesai' untuk mengakhiri): Charger
+Harga barang: Rp 25000
+Jumlah barang: 1
+Subtotal: Rp 25,000
+
+Nama barang (ketik 'selesai' untuk mengakhiri): selesai
+
+========== STRUK BELANJA ==========
+1. Kabel USB
+   2 x Rp 15,000
+   Subtotal: Rp 30,000
+2. Charger
+   1 x Rp 25,000
+   Subtotal: Rp 25,000
+-----------------------------------
+TOTAL BELANJA: Rp 55,000
+Terima kasih sudah berbelanja!</code></pre>
+
+        <p>
+          Dari contoh tersebut, dua kabel USB menghasilkan subtotal Rp30.000, sedangkan satu charger menghasilkan subtotal Rp25.000. Jadi, total belanja adalah Rp55.000.
+        </p>
+
+        <h2>5. Memahami Bagian Penting Kodenya</h2>
+
+        <h3>List untuk menyimpan keranjang</h3>
+
+        <pre><code>keranjang = []</code></pre>
+
+        <p>
+          List ini digunakan untuk menampung data semua barang yang dimasukkan selama program berjalan. Setiap barang baru akan ditambahkan menggunakan <code>append()</code>.
+        </p>
+
+        <h3>Perulangan while</h3>
+
+        <pre><code>while True:
+    nama = input("Nama barang: ")</code></pre>
+
+        <p>
+          Perulangan <code>while</code> memungkinkan pengguna memasukkan banyak barang. Perintah <code>break</code> menghentikan perulangan ketika pengguna mengetik <code>selesai</code>.
+        </p>
+
+        <h3>Dictionary untuk data barang</h3>
+
+        <pre><code>barang = {
+    "nama": nama,
+    "harga": harga,
+    "jumlah": jumlah,
+    "subtotal": subtotal
+}</code></pre>
+
+        <p>
+          Dictionary mengelompokkan informasi yang berkaitan dalam satu struktur data. Dengan begitu, nama barang, harga, jumlah, dan subtotal bisa disimpan bersama.
+        </p>
+
+        <h3>Perhitungan subtotal</h3>
+
+        <pre><code>subtotal = harga * jumlah</code></pre>
+
+        <p>
+          Subtotal didapat dari harga satuan dikalikan jumlah pembelian. Selanjutnya, subtotal setiap barang dijumlahkan untuk memperoleh total transaksi.
+        </p>
+
+        <h3>Menangani kesalahan input</h3>
+
+        <pre><code>except ValueError:
+    print("Harga dan jumlah harus diisi dengan angka.")</code></pre>
+
+        <p>
+          Ketika pengguna memasukkan teks pada kolom yang seharusnya berisi angka, Python dapat menghasilkan <code>ValueError</code>. Dengan <code>try-except</code>, program dapat memberi pesan kesalahan tanpa langsung berhenti.
+        </p>
+
+        <h2>6. Apa yang Bisa Dikembangkan Selanjutnya?</h2>
+
+        <p>
+          Setelah memahami program dasar ini, ada banyak fitur yang bisa ditambahkan secara bertahap.
+        </p>
+
+        <ol>
+          <li>Menambahkan pembayaran dan menghitung kembalian.</li>
+          <li>Membuat menu untuk memilih tindakan kasir.</li>
+          <li>Menyimpan transaksi ke file JSON.</li>
+          <li>Membuat daftar produk beserta stoknya.</li>
+          <li>Menyimpan data barang dan transaksi menggunakan SQLite.</li>
+          <li>Membuat tampilan aplikasi menggunakan Tkinter.</li>
+        </ol>
+
+        <p>
+          Kalau ingin melihat contoh proyek kasir yang menjadi inspirasi tutorial ini, kunjungi halaman
+          <a href="/projects/kasir-python.html">proyek Kasir Python Zaycomcell</a>.
+          Kamu juga bisa membuka
+          <a href="https://github.com/fajarlubis41/kasir-python" target="_blank" rel="noopener noreferrer">repositori Kasir Python di GitHub</a>
+          untuk mempelajari kode proyek yang tersedia di sana.
+        </p>
+
+        <h2>Kesimpulan</h2>
+
+        <p>
+          Aplikasi kasir sederhana ini bisa menjadi latihan awal untuk memahami Python melalui praktik langsung. Kita telah menggunakan input, list, dictionary, perulangan, percabangan, dan penanganan kesalahan.
+        </p>
+
+        <p>
+          Tidak perlu terburu-buru menambahkan semua fitur sekaligus. Pastikan setiap bagian sudah dipahami dan berjalan dengan baik sebelum melanjutkan ke tahap berikutnya.
+        </p>
+
+        <p>
+          Untuk tutorial pemrograman dan teknologi lainnya, silakan kunjungi
+          <a href="/blog/">Blog Zaycomcell</a>.
+          Kamu juga bisa kembali ke
+          <a href="/">website utama Zaycomcell</a>
+          untuk melihat layanan dan proyek lainnya.
+        </p>
+
+        <aside class="my-8 rounded-xl border border-cyan-400/20 bg-panel p-5">
+          <h2 class="!mt-0 !text-lg">Lanjut Belajar Python</h2>
+          <p class="!mb-3">
+            Sudah berhasil menjalankan program ini? Coba kembangkan dengan fitur pembayaran, kembalian, dan penyimpanan transaksi.
+          </p>
+          <a href="/projects/kasir-python.html" class="font-semibold">
+            Lihat proyek Kasir Python →
+          </a>
+        </aside>
+
+        <p class="text-sm text-slate-500">
+          Catatan: Program ini dibuat untuk pembelajaran. Aplikasi kasir untuk operasional bisnis memerlukan pengujian, validasi, serta penyimpanan transaksi yang lebih andal.
+        </p>
+      </div>
+    </article>
+
+    <nav aria-label="Navigasi artikel" class="mt-12 border-t border-slate-800 pt-6">
+      <a href="/blog/" class="text-cyan-400 hover:text-cyan-300">
+        ← Kembali ke semua artikel
+      </a>
+    </nav>
+  </main>
+
+  <footer class="mt-10 border-t border-slate-800">
+    <div class="mx-auto flex max-w-5xl flex-col justify-between gap-3 px-5 py-6 text-sm text-slate-400 sm:flex-row">
+      <p>© 2026 Zaycomcell · Dibuat dengan semangat belajar.</p>
+      <a href="/" class="hover:text-cyan-400">Tentang Zaycomcell ↗</a>
+    </div>
+  </footer>
+</body>
+</html>
