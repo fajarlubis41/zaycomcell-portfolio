@@ -20,5 +20,11 @@ jobs:
       - name: Install Google APIs Client
         run: npm install googleapis
 
+      - name: Create Credentials File
+        env:
+          BASE64_CREDS: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
+        run: |
+          echo "$BASE64_CREDS" | base64 --decode > service-account.json
+
       - name: Execute Indexing Request
         run: node indexer.js
