@@ -21,6 +21,4 @@ jobs:
         run: npm install googleapis
 
       - name: Execute Indexing Request
-        env:
-          GOOGLE_CREDS: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
         run: node indexer.js
