@@ -1,60 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <url>
-    <loc>https://zaycomcell.com/</loc>
-  </url>
+    <url>
+        <loc>https://zaycomcell.com/</loc>
+    </url>
 
-  <url>
-    <loc>https://zaycomcell.com/blog/</loc>
-  </url>
+    <url>
+        <loc>https://zaycomcell.com/about.html</loc>
+    </url>
 
-  <url>
-    <loc>https://zaycomcell.com/blog/samsung-a10s-layar-mati/</loc>
-  </url>
+    <url>
+        <loc>https://zaycomcell.com/contact.html</loc>
+    </url>
 
-  <url>
-    <loc>https://zaycomcell.com/blog/uji-coba-skor-digital-pencak-silat/</loc>
-  </url>
+    <url>
+        <loc>https://zaycomcell.com/privacy-policy.html</loc>
+    </url>
 
-  <url>
-    <loc>https://zaycomcell.com/blog/ganti-lcd-redmi-note-13-5g-oled/</loc>
-  </url>
+    <url>
+        <loc>https://zaycomcell.com/blog/</loc>
+    </url>
 
-  <url>
-    <loc>https://zaycomcell.com/blog/download-windows-10-resmi/</loc>
-  </url>
+    <url>
+        <loc>https://zaycomcell.com/blog/samsung-a10s-layar-mati/</loc>
+    </url>
 
-  <url>
-    <loc>https://zaycomcell.com/blog/cara-membuat-bootable-windows-10-dengan-rufus/</loc>
-  </url>
+    <url>
+        <loc>https://zaycomcell.com/blog/uji-coba-skor-digital-pencak-silat/</loc>
+    </url>
 
-  <url>
-    <loc>https://zaycomcell.com/blog/tutorial-kasir-python/</loc>
-  </url>
+    <url>
+        <loc>https://zaycomcell.com/blog/ganti-lcd-redmi-note-13-5g-oled/</loc>
+    </url>
 
-  <url>
-    <loc>https://zaycomcell.com/blog/cara-download-driver-laptop/</loc>
-  </url>
+    <url>
+        <loc>https://zaycomcell.com/blog/download-windows-10-resmi/</loc>
+    </url>
 
-  <url>
-    <loc>https://zaycomcell.com/blog/servis-samsung-a20-lupa-sandi-frp/</loc>
-  </url>
+    <url>
+        <loc>https://zaycomcell.com/blog/cara-membuat-bootable-windows-10-dengan-rufus/</loc>
+    </url>
 
-  <url>
-    <loc>https://zaycomcell.com/projects/skor-pencak-silat.html</loc>
-  </url>
+    <url>
+        <loc>https://zaycomcell.com/blog/tutorial-kasir-python/</loc>
+    </url>
 
-  <url>
-    <loc>https://zaycomcell.com/projects/inventory-qc.html</loc>
-  </url>
+    <url>
+        <loc>https://zaycomcell.com/blog/cara-download-driver-laptop/</loc>
+    </url>
 
-  <url>
-    <loc>https://zaycomcell.com/projects/kasir-python.html</loc>
-  </url>
+    <url>
+        <loc>https://zaycomcell.com/blog/servis-samsung-a20-lupa-sandi-frp/</loc>
+    </url>
 
-  <url>
-    <loc>https://zaycomcell.com/projects/kasir-pro-v3.html</loc>
-  </url>
+    <url>
+        <loc>https://zaycomcell.com/projects/skor-pencak-silat.html</loc>
+    </url>
+
+    <url>
+        <loc>https://zaycomcell.com/projects/inventory-qc.html</loc>
+    </url>
+
+    <url>
+        <loc>https://zaycomcell.com/projects/kasir-python.html</loc>
+    </url>
+
+    <url>
+        <loc>https://zaycomcell.com/projects/kasir-pro-v3.html</loc>
+    </url>
 
 </urlset>
